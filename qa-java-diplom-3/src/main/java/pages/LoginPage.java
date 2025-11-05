@@ -11,8 +11,6 @@ import java.time.Duration;
 public class LoginPage {
     private final WebDriver webDriver;
 
-    private final String url = "https://stellarburgers.education-services.ru/login";
-
     //Поле "Email"
     private final By emailInput = By.xpath(".//label[text()='Email']/../input");
 
@@ -44,7 +42,8 @@ public class LoginPage {
     }
 
     public void waitUntilLoaded() {
+        String url = "https://stellarburgers.education-services.ru/login";
         new WebDriverWait(webDriver, Duration.ofSeconds(10))
-                .until(ExpectedConditions.urlToBe(this.url));
+                .until(ExpectedConditions.urlToBe(url));
     }
 }

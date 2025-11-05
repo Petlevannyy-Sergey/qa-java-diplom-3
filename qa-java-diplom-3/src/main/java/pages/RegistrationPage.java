@@ -14,7 +14,7 @@ public class RegistrationPage {
     private final By registerButton = By.xpath(".//button[text()='Зарегистрироваться']");
 
     //Кнопка "Войти" под формой регистрации
-    private final By loginButton = By.xpath(".//a[text()='Войти']");
+    private final By loginLink = By.xpath(".//a[text()='Войти']");
 
     //Поле "Email"
     private final By emailInput = By.xpath(".//label[text()='Email']/../input");
@@ -39,8 +39,8 @@ public class RegistrationPage {
         webDriver.findElement(registerButton).click();
     }
 
-    public void clickLoginButton() {
-        webDriver.findElement(loginButton).click();
+    public void clickLoginLink() {
+        webDriver.findElement(loginLink).click();
     }
 
     public void setEmail(String email) {

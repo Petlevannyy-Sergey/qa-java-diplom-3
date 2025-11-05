@@ -7,20 +7,20 @@ public class PasswordRecoveryPage {
     private final WebDriver webDriver;
 
     //Кнопка "Войти" под формой восстановления пароля
-    private final By loginButton = By.xpath(".//a[text()='Войти']");
+    private final By loginLink = By.xpath(".//a[text()='Войти']");
 
     // Кнопка "Восстановить пароль"
-    private final By recoverPasswordButton = By.xpath(".//a[text()='Восстановить пароль']");
+    private final By recoverPasswordLink = By.xpath(".//a[text()='Восстановить пароль']");
 
     public PasswordRecoveryPage(WebDriver webDriver) {
         this.webDriver = webDriver;
     }
 
-    public void clickLoginButton() {
-        webDriver.findElement(loginButton).click();
+    public void clickLoginLink() {
+        webDriver.findElement(loginLink).click();
     }
 
-    public void clickRecoverPasswordButton() {
-        webDriver.findElement(recoverPasswordButton).click();
+    public void clickRecoverPasswordLink() {
+        webDriver.findElement(recoverPasswordLink).click();
     }
 }

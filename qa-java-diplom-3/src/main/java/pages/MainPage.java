@@ -13,7 +13,7 @@ public class MainPage {
     public static final String url = "https://stellarburgers.education-services.ru/";
 
     // Кнопка "Войти в аккаунт"
-    private final By btnLogin = By.xpath(".//button[text()='Войти в аккаунт']");
+    private final By loginButton = By.xpath(".//button[text()='Войти в аккаунт']");
 
     //Кнопка "Личный кабинет"
     private final By accountButton = By.xpath(".//p[text()='Личный Кабинет']");
@@ -41,7 +41,7 @@ public class MainPage {
     }
 
     public void clickLoginButton() {
-        webDriver.findElement(btnLogin).click();
+        webDriver.findElement(loginButton).click();
     }
 
     public void clickAccountButton() {

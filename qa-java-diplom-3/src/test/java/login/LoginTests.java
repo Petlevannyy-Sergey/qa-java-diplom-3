@@ -77,7 +77,7 @@ public class LoginTests {
         driver.navigate().to(MainPage.url);
         mainPage.clickAccountButton();
         registrationPage.clickRegisterLink();
-        registrationPage.clickLoginButton();
+        registrationPage.clickLoginLink();
         loginPage.setCredentials(user);
         loginPage.clickLoginButton();
         mainPage.clickAccountButton();
@@ -96,8 +96,8 @@ public class LoginTests {
         // Act
         driver.navigate().to(MainPage.url);
         mainPage.clickAccountButton();
-        passwordRecoveryPage.clickRecoverPasswordButton();
-        passwordRecoveryPage.clickLoginButton();
+        passwordRecoveryPage.clickRecoverPasswordLink();
+        passwordRecoveryPage.clickLoginLink();
         loginPage.setCredentials(user);
         loginPage.clickLoginButton();
         mainPage.clickAccountButton();
