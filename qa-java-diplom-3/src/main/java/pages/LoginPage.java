@@ -2,10 +2,16 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import user.User;
+
+import java.time.Duration;
 
 public class LoginPage {
     private final WebDriver webDriver;
+
+    private final String url = "https://stellarburgers.education-services.ru/login";
 
     //Поле "Email"
     private final By emailInput = By.xpath(".//label[text()='Email']/../input");
@@ -32,8 +38,13 @@ public class LoginPage {
         webDriver.findElement(loginButton).click();
     }
 
-    public void setCredentials(User user){
+    public void setCredentials(User user) {
         setEmail(user.getEmail());
         setPassword(user.getPassword());
+    }
+
+    public void waitUntilLoaded() {
+        new WebDriverWait(webDriver, Duration.ofSeconds(10))
+                .until(ExpectedConditions.urlToBe(this.url));
     }
 }

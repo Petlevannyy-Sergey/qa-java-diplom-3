@@ -9,6 +9,7 @@ public class PasswordRecoveryPage {
     //Кнопка "Войти" под формой восстановления пароля
     private final By loginButton = By.xpath(".//a[text()='Войти']");
 
+    // Кнопка "Восстановить пароль"
     private final By recoverPasswordButton = By.xpath(".//a[text()='Восстановить пароль']");
 
     public PasswordRecoveryPage(WebDriver webDriver) {

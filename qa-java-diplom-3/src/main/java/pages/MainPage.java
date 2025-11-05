@@ -2,6 +2,11 @@ package pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
+import java.util.Objects;
 
 public class MainPage {
     private final WebDriver webDriver;
@@ -65,5 +70,11 @@ public class MainPage {
 
     public boolean fillingsTabIsActive() {
         return webDriver.findElement(fillingsActiveTab).isEnabled();
+    }
+
+    public boolean isActive(){
+        new WebDriverWait(webDriver, Duration.ofSeconds(10))
+                .until(ExpectedConditions.urlToBe(this.url));
+        return Objects.equals(webDriver.getCurrentUrl(), this.url);
     }
 }

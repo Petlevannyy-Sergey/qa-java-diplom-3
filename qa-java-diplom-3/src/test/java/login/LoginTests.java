@@ -76,7 +76,7 @@ public class LoginTests {
         // Act
         driver.navigate().to(MainPage.url);
         mainPage.clickAccountButton();
-        registrationPage.clickRegisterButton();
+        registrationPage.clickRegisterLink();
         registrationPage.clickLoginButton();
         loginPage.setCredentials(user);
         loginPage.clickLoginButton();
