@@ -9,7 +9,6 @@ import java.util.Objects;
 
 public class AccountPage {
     private final WebDriver webDriver;
-    private final String url = "https://stellarburgers.education-services.ru/account/profile";
 
     public AccountPage(WebDriver webDriver) {
         this.webDriver = webDriver;
@@ -17,8 +16,9 @@ public class AccountPage {
 
     // Ожидание загрузки страницы профиля
     public boolean isActive() {
+        String url = "https://stellarburgers.education-services.ru/account/profile";
         new WebDriverWait(webDriver, Duration.ofSeconds(10))
-                .until(ExpectedConditions.urlToBe(this.url));
-        return Objects.equals(webDriver.getCurrentUrl(), this.url);
+                .until(ExpectedConditions.urlToBe(url));
+        return Objects.equals(webDriver.getCurrentUrl(), url);
     }
 }

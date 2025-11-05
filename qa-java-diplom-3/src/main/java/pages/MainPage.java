@@ -61,7 +61,9 @@ public class MainPage {
     }
 
     public boolean bunsTabIsActive() {
-        return webDriver.findElement(bunsActiveTab).isEnabled();
+        return new WebDriverWait(webDriver, Duration.ofSeconds(30))
+                .until(ExpectedConditions.visibilityOf(webDriver.findElement(bunsActiveTab)))
+                .isEnabled();
     }
 
     public boolean saucesTabIsActive() {
@@ -74,7 +76,7 @@ public class MainPage {
 
     public boolean isActive(){
         new WebDriverWait(webDriver, Duration.ofSeconds(10))
-                .until(ExpectedConditions.urlToBe(this.url));
-        return Objects.equals(webDriver.getCurrentUrl(), this.url);
+                .until(ExpectedConditions.urlToBe(url));
+        return Objects.equals(webDriver.getCurrentUrl(), url);
     }
 }

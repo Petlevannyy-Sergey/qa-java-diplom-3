@@ -26,9 +26,10 @@ public class ConstructorTests {
         driver.navigate().to(MainPage.url);
         mainPage.clickFillingButton();
         mainPage.clickBunsButton();
+        boolean result = mainPage.bunsTabIsActive();
 
         // Assert
-        Assert.assertTrue("Некорректное переключение на вкладку 'Булки'", mainPage.bunsTabIsActive());
+        Assert.assertTrue("Некорректное переключение на вкладку 'Булки'", result);
     }
 
     @Test
