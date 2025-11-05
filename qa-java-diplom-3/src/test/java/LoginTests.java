@@ -1,5 +1,3 @@
-package login;
-
 import config.WebConfig;
 import io.qameta.allure.junit4.DisplayName;
 import io.restassured.response.Response;
