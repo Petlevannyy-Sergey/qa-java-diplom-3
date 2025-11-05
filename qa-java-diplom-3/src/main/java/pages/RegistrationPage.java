@@ -25,6 +25,7 @@ public class RegistrationPage {
     //Поле "Имя"
     private final By nameInput = By.xpath(".//label[text()='Имя']/../input");
 
+    // Ошибка "Некорректный пароль"
     private final By wrongPasswordError = By.xpath(".//p[text()='Некорректный пароль']");
 
     public RegistrationPage(WebDriver webDriver) {
