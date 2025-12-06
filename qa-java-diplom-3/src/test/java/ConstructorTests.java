@@ -1,4 +1,5 @@
 import config.WebConfig;
+import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;
 import org.junit.After;
 import org.junit.Assert;
@@ -13,13 +14,14 @@ public class ConstructorTests {
 
     @Before
     public void setup() {
-        driver = WebConfig.runChromeDriver();
+        driver = WebConfig.runDriver();
         mainPage = new MainPage(driver);
     }
 
     @Test
+    @Description("Проверка вкладки 'Булки'")
     @DisplayName("Переключение на вкладку 'Булки'")
-    public void SwitchToBunTabIsSuccess() {
+    public void switchToBunTabIsSuccess() {
         // Arrange
 
         // Act
@@ -33,6 +35,7 @@ public class ConstructorTests {
     }
 
     @Test
+    @Description("Проверка вкладки 'Соусы'")
     @DisplayName("Переключение на вкладку 'Соусы'")
     public void SwitchToSauceTabIsSuccess() {
         // Arrange
@@ -46,6 +49,7 @@ public class ConstructorTests {
     }
 
     @Test
+    @Description("Проверка вкладки 'Начинки'")
     @DisplayName("Переключение на вкладку 'Начинки'")
     public void SwitchToFillingTabIsSuccess() {
         // Arrange

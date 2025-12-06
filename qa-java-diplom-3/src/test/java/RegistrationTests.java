@@ -1,4 +1,5 @@
 import config.WebConfig;
+import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;
 import org.junit.After;
 import org.junit.Before;
@@ -21,7 +22,7 @@ public class RegistrationTests {
 
     @Before
     public void setup() {
-        driver = WebConfig.runChromeDriver();
+        driver = WebConfig.runDriver();
         mainPage = new MainPage(driver);
         registrationPage = new RegistrationPage(driver);
         loginPage = new LoginPage(driver);
@@ -29,6 +30,7 @@ public class RegistrationTests {
     }
 
     @Test
+    @Description("Проверка регистрации")
     @DisplayName("Регистрация пользователя с валидными данными")
     public void RegistrationIsSuccess() {
         // Arrange
@@ -49,6 +51,7 @@ public class RegistrationTests {
     }
 
     @Test
+    @Description("Проверка регистрации")
     @DisplayName("Регистрация пользователя при некорректном вводе пароля")
     public void RegistrationWithIncorrectPasswordThrowsError() {
         // Arrange

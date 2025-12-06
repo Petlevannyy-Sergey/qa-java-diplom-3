@@ -1,5 +1,6 @@
 package pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -14,7 +15,7 @@ public class AccountPage {
         this.webDriver = webDriver;
     }
 
-    // Ожидание загрузки страницы профиля
+    @Step("Ожидание загрузки страницы профиля")
     public boolean isActive() {
         String url = "https://stellarburgers.education-services.ru/account/profile";
         new WebDriverWait(webDriver, Duration.ofSeconds(10))

@@ -1,4 +1,5 @@
 import config.WebConfig;
+import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;
 import io.restassured.response.Response;
 import org.junit.After;
@@ -25,13 +26,14 @@ public class LoginTests {
         user = Generators.getUser();
         Response response = UserActions.create(user);
         accessToken = UserActions.getAccessToken(response);
-        driver = WebConfig.runChromeDriver();
+        driver = WebConfig.runDriver();
         mainPage = new MainPage(driver);
         loginPage = new LoginPage(driver);
         accountPage = new AccountPage(driver);
     }
 
     @Test
+    @Description("Проверка авторизации")
     @DisplayName("Авторизация на главной странице")
     public void loginOnMainPageIsSuccess() {
         // Arrange
@@ -49,6 +51,7 @@ public class LoginTests {
     }
 
     @Test
+    @Description("Проверка авторизации")
     @DisplayName("Авторизация через личный кабинет")
     public void LoginUsingAccountIsSuccess() {
         // Arrange
@@ -66,6 +69,7 @@ public class LoginTests {
     }
 
     @Test
+    @Description("Проверка авторизации")
     @DisplayName("Авторизация через кнопку на форме регистрации")
     public void LoginFromRegistrationPageIsSuccess() {
         // Arrange
@@ -86,6 +90,7 @@ public class LoginTests {
     }
 
     @Test
+    @Description("Проверка авторизации")
     @DisplayName("Авторизация через кнопку в форме восстановления пароля")
     public void LoginFromPasswordRecoveryPageIsSuccess() {
         // Arrange
